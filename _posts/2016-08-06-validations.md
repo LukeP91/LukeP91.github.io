@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Post.new().valid?
+title: Post.new.valid?
 ---
 
-Today I would like to share with you, my next step in Rails journey. Which is as you can tell from title validations. To be specific how to make rails app to check if a newly created object is valid in the context of its model and how validation work under the hood.
+Today I would like to share with you, my next step in Rails journey. Which is as you can tell from title validations. To be specific how to make rails app to check if a newly created object is valid in the context of its model and how validation works under the hood.
 
-I was asked to create a simple application with only just one model, controller. Then add to it some validations. I chose to make simple "blog" app with only Post model. There was also one more restriction that Andrzej gave me. No scaffolds and generators except for migration generator. That meant that I had to create a model, controller and all view files from scratch for all basic actions. As it turned out it was a great way to learn how it all works. At the end, I figured out that I could also create migrations without using a generator. From now on all my apps during that course will be created that way.
+I was asked to create a simple application with only just one model, controller. Then add to it some validations. I chose to make simple "blog" app with only Post model. There was also one more restriction that [Andrzej Krzywda](https://twitter.com/andrzejkrzywda) gave me. No scaffolds and generators except for migration generator. That meant that I had to create a model, controller and all view files from scratch for all basic actions. As it turned out it was a great way to learn how it all works. In the end, I figured out that I could also create migrations without using a generator. From now on all my apps during that course will be created that way.
 
 ### Model
 I decided to split the whole process into more manageable chunks and the first one was easy. Create model with some simple validations. At the beginning, I decided what fields should Post have and how they should be validated. So, a blog post should have at least title, which I thought should not only be present - it doesn't make sense to create posts without a title. Right? But also should have length constraints. I thought that way too short title doesn't make any sense and too long, on the other hand, make it hard to understand what is the post about. Next thing that is even more important is actual content of it. What's the point of creating empty posts? And the last thing which I thought should be optional was an author.

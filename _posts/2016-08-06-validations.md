@@ -10,12 +10,12 @@ I was asked to create a simple application with only just one model, controller.
 ### Model
 I decided to split the whole process into more manageable chunks and the first one was easy. Create model with some simple validations. At the beginning, I decided what fields should Post have and how they should be validated. So, a blog post should have at least title, which I thought should not only be present - it doesn't make sense to create posts without a title. Right? But also should have length constraints. I thought that way too short title doesn't make any sense and too long, on the other hand, make it hard to understand what is the post about. Next thing that is even more important is actual content of it. What's the point of creating empty posts? And the last thing which I thought should be optional was an author.
 
-{% highlight ruby linenos%}
+```language-ruby
 class Post < ActiveRecord::Base
   validates :title, presence: true, length: { in: 2..50 }
   validates :content, presence: true
 end
-{% endhighlight %}
+```
 
 Code for that model is very simple, but the purpose of that task was to learn how validation works under the hood and not to make the most bulletproof model. Ok, the first thing I did learn was that each model inherits from ActiveRecord::Base class. That class includes multiple modules and one of them is the module responsible for validations. One of the methods in that module is validation, which in very simple words runs all validations for given fields and checks if any errors were found. Since I am at the beginning of my learning process that was all that I should know for now.
 

@@ -7,7 +7,7 @@ An important topic in any application that tries to solve a problem are associat
 
 As my next step in [Junior Rails Developer Course](http://blog.arkency.com/junior-rails-developer/), I was asked to create a simple app that will teach me how to use associations in Rails. In order to do that, I have created two models that represent employees in a company and various departments in it.
 
-To create an association in Rails you need to do two things. Add proper method to both or one of the conencted models. And then create a proper migration. In my app, I have decided that each Employee belongs to one of existing departments. Department has many employees, but also to make things more interesting each department belongs to the manager.
+To create an association in Rails you need to do two things. Add proper method to both or one of the connected models. And then create a proper migration. In my app, I have decided that each Employee belongs to one of existing departments. Department has many employees, but also to make things more interesting each department belongs to the manager.
 
 ### Belongs_to
 Belongs to is the simplest association which tells us that one object belongs to another one. For example, book belongs to an author or in our case each employee belongs to one of existing departments.
@@ -18,7 +18,7 @@ class Employee < ActiveRecord::Base
 end
 {% endhighlight %}
 
-Another usage of belongs to was a bit trickier. I wanted to make each department to have one manager. But since I didn't want to create a separte model for that because a manager is in fact on of department's employees I needed to do it differently. Fortunately _belongs_to_ method in Rails supports many additional options. One of which I used in that example. Rest of them you can check out in [Rails Guides 4.1.2](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference). To make manager work I used _class_name_.
+Another usage of belongs to was a bit trickier. I wanted to make each department to have one manager. But since I didn't want to create a separate model for that because a manager is in fact on of department's employees I needed to do it differently. Fortunately _belongs_to_ method in Rails supports many additional options. One of which I used in that example. Rest of them you can check out in [Rails Guides 4.1.2](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference). To make manager work I used _class_name_.
 
 #### Class_name
 Class_name helps when model name can't be figured out using association name. For example in our case association name was manager. But in our app manager is, in fact, an object of Employee class. Using _class_name_ we can tell Rails that even though our association name is manager, the model that is actually used is called Employee.

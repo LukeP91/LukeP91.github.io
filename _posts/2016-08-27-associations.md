@@ -59,3 +59,5 @@ There was one problem with a manager when I started to make my app work. I could
 You can check finished app on [Github](https://github.com/LukeP91/association_app) and [Heroku](https://tranquil-fjord-78902.herokuapp.com/).
 
 {% include twitter_plug.html %}
+
+Cheers Luke!
